@@ -1,0 +1,122 @@
+"""
+Advanced Concepts in Python
+===========================
+
+This section covers some of the more powerful and useful built-in features of Python, 
+as well as important standard libraries that allow for more advanced operations.
+
+1️⃣ Numbers
+-----------
+Python makes it easy to work with different number bases (decimal, hexadecimal, octal, binary) 
+and perform numeric computations.
+
+Examples:
+    a = 12
+    hex_a = hex(a)   # '0xc'
+    oct_a = oct(a)   # '0o14'
+    bin_a = bin(a)   # '0b1100'
+
+    # Looping with hexadecimal
+    for number in range(0x10):  
+        print(number)
+
+    # Converting with a specific base
+    a = int(45)
+    print(a)         # default base 10
+    print(int('45', 8))  # interpret '45' as base 8
+
+    # Powers
+    a = 2**10
+    b = pow(2, 10)
+
+Common numeric functions:
+    abs(x)    → absolute value
+    round(x)  → rounded value
+
+
+2️⃣ Strings
+-----------
+Strings in Python have many built-in methods such as:
+    split(), partition(), lower(), upper(), replace(), join(), etc.
+
+Examples:
+    s = "I am here"
+    s.split(" ")        # ['I', 'am', 'here']
+
+    my_list = ["Alex", "Arad", "Mina"]
+    ','.join(my_list)   # 'Alex,Arad,Mina'
+
+
+3️⃣ Sets
+--------
+Sets are collections of unique elements, defined with curly braces {}.
+
+Example:
+    my_set = {1, 2}
+    my_set.add(2)  # {1, 2}
+
+⚠️ Assignment copies the reference:
+    s1 = {1, 2, 3}
+    s2 = s1
+    s1.add(4)
+    print(s2)  # {1, 2, 3, 4}
+
+✅ To avoid this, use:
+    s2 = s1.copy()
+
+Common methods:
+    add(), remove(), union(), intersection(), difference(), issubset(), etc.
+
+
+4️⃣ Dictionaries
+----------------
+Dictionaries store key–value pairs, defined with {}.
+
+Example:
+    my_dict = {'a': 0, 'b': 1, 'c': 2}
+    for k, v in my_dict.items():
+        print(k, v)
+
+Common methods:
+    keys(), values(), items(), get(), pop(), update(), clear()
+
+
+5️⃣ Lists
+---------
+Lists are ordered collections that can contain duplicates, defined with [].
+
+Example:
+    my_list = [1, 2, 3, 4]
+    my_list.append(5)
+    my_list.pop()
+    my_list.remove(2)
+
+
+6️⃣ Iteration Tools (itertools)
+-------------------------------
+`itertools` is a powerful library for creating and working with iterators.
+
+Examples:
+    import itertools as it
+
+    # Cycle through elements indefinitely
+    a = it.cycle([1, 2, 3])
+    next(a)  # 1
+    next(a)  # 2
+
+    # All combinations
+    nums = [1, 2, 3, 4]
+    list(it.combinations(nums, 2))
+    list(it.combinations_with_replacement(nums, 2))
+
+    # Counting
+    counter = it.count(3, 10)  # start=3, step=10
+    next(counter)  # 3
+    next(counter)  # 13
+
+    # Accumulating
+    list(it.accumulate(nums))  # [1, 3, 6, 10]
+
+Other useful itertools functions:
+    product(), permutations(), chain(), islice(), groupby(), etc.
+"""
